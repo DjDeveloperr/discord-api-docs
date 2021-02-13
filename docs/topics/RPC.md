@@ -1148,6 +1148,67 @@ Used to reject an Ask to Join request.
 }
 ```
 
+#### GET_RELATIONSHIPS
+
+Used to get an array of relationships. Returns partial [relationship](#DOCS_TOPICS_GATEWAY/presence-update) objects.
+
+#### OPEN_OVERLAY_GUILD_INVITE
+
+Used to open Guild Invite Overlay.
+
+###### Open Overlay Guild Invite Argument Structure
+
+| Field | Type    | Description |
+| ----- | ------- | ----------- |
+| pid   | integer | process id  |
+| code  | string  | invite code |
+
+#### OPEN_OVERLAY_VOICE_SETTINGS
+
+Used to open Voice Settings Overlay.
+
+###### Open Overlay Voice Settings Argument Structure
+
+| Field | Type    | Description |
+| ----- | ------- | ----------- |
+| pid   | integer | process id  |
+
+#### GET_NETWORKING_CONFIG
+
+Used to get Networking Config. Returns [networing config](#DOCS_TOPICS_RPC/get-networking-config-networking-config-object) object.
+
+###### Networking Config Object
+
+| Field   | Type   | Description        |
+| ------- | ------ | ------------------ |
+| address | string | networking address |
+| token   | string | networking token   |
+
+#### GET_IMAGE
+
+Used to get base64 of cdn image data. Only supports user avatars currently. Returns [get image object](#DOCS_TOPICS_RPC/get-image-get-image-object).
+
+###### Get Image Argument Structure
+
+| Field  | Type                                                    | Description                                 |
+| ------ | ------------------------------------------------------- | ------------------------------------------- |
+| type   | [image type](#DOCS_TOPICS_RPC/get-image-image-type)     | type of image to get                        |
+| id     | snowflake                                               | resource id                                 |
+| size   | integer                                                 | can be any power of two between 16 and 4096 |
+| format | string                                                  | can be one of `png`, `jpg`, or `webp`       |
+
+###### Get Image Object
+
+| Field    | Type   | Description       |
+| -------- | ------ | ----------------- |
+| data_url | string | base64 image data |
+
+###### Image Type
+
+| Type | Description         |
+| ---- | ------------------- |
+| user | user's avatar image |
+
 #### READY
 
 ###### Ready Dispatch Data Structure
